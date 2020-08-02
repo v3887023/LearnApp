@@ -1,0 +1,4 @@
+include ':lib_annotations'
+include ':lib_compiler'
+include ':app'
+rootProject.name = "LearnApp"
