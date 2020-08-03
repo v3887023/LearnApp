@@ -29,7 +29,7 @@ class SubjectProcessor : AbstractProcessor() {
 
         val entityType = SubjectEntity::class.java
         val className = ParameterizedTypeName.get(ArrayList::class.java, entityType)
-        val fieldSpec = FieldSpec.builder(className, "subjects")
+        val fieldSpec = FieldSpec.builder(className, "subjectEntities")
             .addModifiers(Modifier.FINAL, Modifier.PRIVATE, Modifier.STATIC)
             .initializer("new $className()")
             .build()
@@ -41,17 +41,21 @@ class SubjectProcessor : AbstractProcessor() {
                 val subject = element.getAnnotation(annotationType)
                 codeBlockBuilder.addStatement(
                     String.format(
-                        "subjects.add(new %s(\"%s\", \"%s\", %b))",
-                        entityType.simpleName, subject.title, subject.description, subject.isTest
+                        "subjectEntities.add(new %s(\"%s\", \"%s\", \"%s\", %b))",
+                        entityType.simpleName,
+                        "$element",
+                        subject.title,
+                        subject.description,
+                        subject.isTest
                     )
                 )
             }
         }
 
-        val methodSpec = MethodSpec.methodBuilder("getSubjects")
+        val methodSpec = MethodSpec.methodBuilder("getSubjectEntities")
             .addModifiers(Modifier.FINAL, Modifier.PUBLIC, Modifier.STATIC)
             .returns(className)
-            .addStatement("return subjects")
+            .addStatement("return subjectEntities")
             .build()
 
         val typeSpec = TypeSpec.classBuilder("SubjectProvider")
