@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LearnApp</string>
+    <string name="label_test">测试</string>
 </resources>
