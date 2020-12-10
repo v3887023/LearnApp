@@ -1,7 +1,8 @@
-package com.example.learnapp
+package com.example.learnapp.adapter
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.learnapp.R
 import com.example.lib_annotations.entity.SubjectEntity
 
 class SubjectAdapter(subjectEntities: List<SubjectEntity>) :

@@ -1,4 +1,4 @@
-package com.example.learnapp
+package com.example.learnapp.base
 
 import android.content.Context
 import android.content.pm.ActivityInfo

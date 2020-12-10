@@ -5,22 +5,29 @@ import com.example.lib_annotations.entity.SubjectEntity
 import com.google.auto.service.AutoService
 import com.squareup.javapoet.*
 import javax.annotation.processing.*
+import javax.lang.model.SourceVersion
 import javax.lang.model.element.Modifier
 import javax.lang.model.element.TypeElement
+import javax.tools.Diagnostic
 
 @AutoService(Processor::class)
 class SubjectProcessor : AbstractProcessor() {
     var filer: Filer? = null
+    var messager:Messager?=null
 
     override fun init(p0: ProcessingEnvironment?) {
         super.init(p0)
         filer = p0?.filer
+        messager = p0?.messager
     }
 
     override fun getSupportedAnnotationTypes(): MutableSet<String> {
         return mutableSetOf(Subject::class.java.canonicalName)
     }
 
+    override fun getSupportedSourceVersion(): SourceVersion {
+        return SourceVersion.latestSupported()
+    }
 
     override fun process(
         set: MutableSet<out TypeElement>?,
@@ -31,7 +38,7 @@ class SubjectProcessor : AbstractProcessor() {
         val className = ParameterizedTypeName.get(ArrayList::class.java, entityType)
         val fieldSpec = FieldSpec.builder(className, "subjectEntities")
             .addModifiers(Modifier.FINAL, Modifier.PRIVATE, Modifier.STATIC)
-            .initializer("new $className()")
+            .initializer("new \$T()", className)
             .build()
 
         val codeBlockBuilder = CodeBlock.builder()
@@ -39,16 +46,17 @@ class SubjectProcessor : AbstractProcessor() {
         if (roundEnvironment != null) {
             for (element in roundEnvironment.getElementsAnnotatedWith(annotationType)) {
                 val subject = element.getAnnotation(annotationType)
-                codeBlockBuilder.addStatement(
-                    String.format(
-                        "subjectEntities.add(new %s(\"%s\", \"%s\", \"%s\", %b))",
-                        entityType.simpleName,
-                        "$element",
-                        subject.title,
-                        subject.description,
-                        subject.isTest
+                try {
+                    codeBlockBuilder.addStatement(
+                            "subjectEntities.add(new \$T(\$S, \$S, \$S, ${subject.isTest}))",
+                            TypeName.get(entityType),
+                            element.toString(),
+                            subject.title,
+                            subject.description
                     )
-                )
+                } catch (e: Exception) {
+                    messager?.printMessage(Diagnostic.Kind.ERROR, e.message, element)
+                }
             }
         }
 

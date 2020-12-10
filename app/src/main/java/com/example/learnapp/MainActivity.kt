@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.SubjectProvider
-import com.example.lib_annotations.Subject
+import com.example.learnapp.adapter.SubjectAdapter
+import com.example.learnapp.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-@Subject("主页")
 class MainActivity : BaseActivity() {
     private lateinit var subjectAdapter: SubjectAdapter
 
@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
         subjectAdapter = SubjectAdapter(subjectEntities)
         rv_subject.layoutManager = LinearLayoutManager(this)
         rv_subject.adapter = subjectAdapter
-        subjectAdapter.setOnItemClickListener { adapter, view, position ->
+        subjectAdapter.setOnItemClickListener { _, _, position ->
             startActivity(Intent(this, Class.forName(subjectEntities[position].className)))
         }
     }
