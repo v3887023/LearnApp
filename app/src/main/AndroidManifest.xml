@@ -28,6 +28,8 @@
         <activity android:name=".activity.VideoActivity" />
         <activity android:name=".activity.DialogTestActivity" />
         <activity android:name=".activity.ListTestActivity" />
+        <activity android:name=".activity.LubanActivity" />
+        <activity android:name=".activity.ImageActivity" />
     </application>
 
 </manifest>

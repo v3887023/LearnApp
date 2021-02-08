@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/countLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="图片数量"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:max="50"
+            app:layout_constraintBottom_toBottomOf="@id/countTv"
+            app:layout_constraintEnd_toStartOf="@id/countTv"
+            app:layout_constraintStart_toEndOf="@id/countLabelTv"
+            app:layout_constraintTop_toTopOf="@id/countTv"
+            tools:progress="20" />
+
+        <TextView
+            android:id="@+id/countTv"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/countLabelTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/countLabelTv"
+            tools:text="20" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sizeCl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#90caf9"
+        app:layout_constraintTop_toBottomOf="@id/countLabelTv">
+
+        <TextView
+            android:id="@+id/originSizeLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="原图大小"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Luban 引擎"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintBottom_toBottomOf="@id/originSizeLabelTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/originSizeLabelTv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="So 引擎"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintBottom_toBottomOf="@id/originSizeLabelTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/originSizeLabelTv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sizeRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/costCl"
+        app:layout_constraintTop_toBottomOf="@id/sizeCl"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/costCl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0f2f1"
+        app:layout_constraintBottom_toTopOf="@id/stateTv">
+
+        <TextView
+            android:id="@+id/costLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="总耗时"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lubanCostTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintBottom_toBottomOf="@id/costLabelTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/costLabelTv"
+            tools:text="0ms" />
+
+        <TextView
+            android:id="@+id/soCostTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textColor="@color/tv_color1"
+            app:layout_constraintBottom_toBottomOf="@id/costLabelTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/costLabelTv"
+            tools:text="0ms" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:background="#e0e0e0"
+            android:gravity="center_vertical"
+            android:onClick="clearCache"
+            android:padding="4dp"
+            android:text="清除缓存"
+            android:textColor="@color/tv_color1" />
+
+        <CheckBox
+            android:id="@+id/recursiveCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:text="循环" />
+
+        <CheckBox
+            android:id="@+id/showResolutionCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:text="分辨率" />
+
+        <CheckBox
+            android:id="@+id/multipleThreadCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:checked="true"
+            android:text="多线程" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/controlLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/stateTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:text="压缩中" />
+
+        <Button
+            android:id="@+id/lubanBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:onClick="lubanCompress"
+            android:text="Luban 引擎" />
+
+        <Button
+            android:id="@+id/soBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:onClick="soCompress"
+            android:text="So 引擎" />
+    </LinearLayout>
+</LinearLayout>

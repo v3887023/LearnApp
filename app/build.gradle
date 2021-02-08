@@ -5,22 +5,28 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.example.learnapp"
-        minSdkVersion 24
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        ndk {
+            abiFilters 'armeabi-v7a'//,'armeabi'//
+        }
+
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
             }
         }
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -52,6 +58,8 @@ dependencies {
 
     kapt project(':lib_compiler')
     implementation project(':lib_annotations')
+
+    implementation project(':luban')
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -87,4 +95,6 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
     implementation 'io.coil-kt:coil:1.1.0'
+
+    implementation 'com.bm.photoview:library:2.0.7'
 }

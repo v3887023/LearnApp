@@ -2,8 +2,8 @@ package com.example.learnapp.activity
 
 import android.os.Bundle
 import android.widget.Toast
-import com.example.learnapp.base.BaseActivity
 import com.example.learnapp.R
+import com.example.learnapp.base.BaseActivity
 
 class BlankActivity : BaseActivity() {
     override fun getLayoutId() = R.layout.activity_blank

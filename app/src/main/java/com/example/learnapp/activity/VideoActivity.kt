@@ -8,8 +8,8 @@ import android.os.Bundle
 import android.os.CancellationSignal
 import android.provider.MediaStore
 import android.util.Size
-import com.example.learnapp.base.BaseActivity
 import com.example.learnapp.R
+import com.example.learnapp.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_video.*
 import kotlin.concurrent.thread
 

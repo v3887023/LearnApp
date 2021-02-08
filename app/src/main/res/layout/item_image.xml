@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/originSizeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:paddingStart="4dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="2dp"
+        android:text="4.56MB"
+        android:textColor="@color/tv_color1"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/originResolutionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/tv_color2"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/originSizeTv"
+        app:layout_constraintTop_toBottomOf="@id/originSizeTv"
+        tools:text="1280x720" />
+
+    <TextView
+        android:id="@+id/lubanSizeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:paddingStart="4dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/tv_color1"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/originSizeTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/originSizeTv"
+        tools:text="123KB" />
+
+    <TextView
+        android:id="@+id/lubanResolutionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/tv_color2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/lubanSizeTv"
+        app:layout_constraintStart_toStartOf="@id/lubanSizeTv"
+        app:layout_constraintTop_toBottomOf="@id/lubanSizeTv"
+        tools:text="1280x720" />
+
+    <TextView
+        android:id="@+id/soSizeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:paddingStart="4dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/tv_color1"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/originSizeTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/originSizeTv"
+        tools:text="456KB" />
+
+    <TextView
+        android:id="@+id/soResolutionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/tv_color2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/soSizeTv"
+        app:layout_constraintTop_toBottomOf="@id/soSizeTv"
+        tools:text="1280x720" />
+</androidx.constraintlayout.widget.ConstraintLayout>
