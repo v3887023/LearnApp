@@ -75,7 +75,7 @@ class AndroidQActivity : BaseActivity() {
 
     fun writeInternalStorage(view: View) {
         val file = File(filesDir, FILE_NAME)
-        toast(if (file.exists()) "yes" else "no")
+        (if (file.exists()) "yes" else "no").toast()
 
         if (file.exists()) {
             file.delete()
@@ -90,18 +90,14 @@ class AndroidQActivity : BaseActivity() {
         }
     }
 
-    private fun toast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
     fun readInternalStorage(view: View) {
         val file = File(filesDir, FILE_NAME)
-        toast(if (file.exists()) "yes" else "no")
+        (if (file.exists()) "yes" else "no").toast()
 
         if (file.exists()) {
             file.inputStream().use { fis ->
                 fis.reader().use {
-                    toast(it.readText())
+                    it.readText().toast()
                 }
             }
         }
@@ -109,7 +105,7 @@ class AndroidQActivity : BaseActivity() {
 
     fun writeExternalStorage(view: View) {
         val file = File(getExternalFilesDir(""), FILE_NAME)
-        toast(if (file.exists()) "yes" else "no")
+        (if (file.exists()) "yes" else "no").toast()
 
         if (file.exists()) {
             file.delete()
@@ -126,12 +122,12 @@ class AndroidQActivity : BaseActivity() {
 
     fun readExternalStorage(view: View) {
         val file = File(getExternalFilesDir(""), FILE_NAME)
-        toast(if (file.exists()) "yes" else "no")
+        (if (file.exists()) "yes" else "no").toast()
 
         if (file.exists()) {
             file.inputStream().use { fis ->
                 fis.reader().use {
-                    toast(it.readText())
+                    it.readText().toast()
                 }
             }
         }

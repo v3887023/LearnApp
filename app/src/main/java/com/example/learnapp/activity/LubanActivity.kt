@@ -91,10 +91,6 @@ class LubanActivity : BaseActivity() {
         }
     }
 
-    private fun String.toast() {
-        runOnUiThread { Toast.makeText(this@LubanActivity, this, Toast.LENGTH_SHORT).show() }
-    }
-
     private fun getUriInfos(count: Int): List<UriInfo> {
         val list = mutableListOf<UriInfo>()
 
