@@ -1,6 +1,6 @@
 package com.zcx.luban.request
 
-import com.yunji.imaginer.luban.worker.SingleCompressWorker
+import com.zcx.luban.worker.SingleCompressWorker
 import com.zcx.luban.CompressCallback
 import com.zcx.luban.result.SingleCompressResult
 import com.zcx.luban.source.Source
