@@ -1,4 +1,4 @@
-package com.yunji.imaginer.luban.worker
+package com.zcx.luban.worker
 
 import android.graphics.Bitmap
 import com.zcx.luban.request.BaseRequestBuilder

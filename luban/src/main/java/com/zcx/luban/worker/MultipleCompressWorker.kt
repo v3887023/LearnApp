@@ -1,6 +1,5 @@
 package com.zcx.luban.worker
 
-import com.yunji.imaginer.luban.worker.AbstractCompressWorker
 import com.zcx.luban.CompressCallback
 import com.zcx.luban.executor.Executors
 import com.zcx.luban.request.MultipleRequestBuilder

@@ -4,6 +4,7 @@ import com.zcx.luban.CompressCallback
 import com.zcx.luban.executor.Executors
 import com.zcx.luban.request.SingleRequestBuilder
 import com.zcx.luban.result.SingleCompressResult
+import com.zcx.luban.worker.AbstractCompressWorker
 
 /**
  * 执行单个压缩操作的类
