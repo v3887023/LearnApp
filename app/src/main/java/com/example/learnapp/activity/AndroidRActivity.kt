@@ -13,7 +13,6 @@ import java.io.File
 /**
  * @Description:
  * @Author: zcx
- * @Copyright: 浙江集商优选电子商务有限公司
  * @CreateDate: 2021/2/22
  */
 @Subject("Android 11")
