@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SaleProgressView">
+        <attr name="spv_progressDrawable" format="reference" />
+        <attr name="spv_progressBarHeight" format="dimension" />
+        <attr name="spv_secondProgressDrawable" format="reference" />
+        <attr name="spv_maxLevelCount" format="integer" />
+        <attr name="spv_extraSpace" format="dimension" />
+        <attr name="spv_progressPaddingLeft" format="dimension" />
+        <attr name="spv_progressPaddingRight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CropImageView">
+        <attr name="cropMaskColor" format="color"/>
+        <attr name="cropBorderColor" format="color"/>
+        <attr name="cropBorderWidth" format="dimension"/>
+        <attr name="cropFocusWidth" format="dimension"/>
+        <attr name="cropFocusHeight" format="dimension"/>
+        <attr name="cropStyle" format="enum">
+            <enum name="rectangle" value="0"/>
+            <enum name="circle" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
