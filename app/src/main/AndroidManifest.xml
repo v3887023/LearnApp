@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.learnapp">
+    package="com.zcx.learnapp">
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -16,21 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.zcx.learnapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AndroidQActivity" />
-        <activity android:name=".activity.BlankActivity" />
-        <activity android:name=".activity.VideoActivity" />
-        <activity android:name=".activity.DialogTestActivity" />
-        <activity android:name=".activity.LubanActivity" />
-        <activity android:name=".activity.ImageActivity" />
-        <activity android:name=".activity.AndroidRActivity" />
-        <activity android:name=".activity.LevelViewActivity" />
+        <activity android:name="com.zcx.learnapp.activity.AndroidQActivity" />
+        <activity android:name="com.zcx.learnapp.activity.BlankActivity" />
+        <activity android:name="com.zcx.learnapp.activity.VideoActivity" />
+        <activity android:name="com.zcx.learnapp.activity.DialogTestActivity" />
+        <activity android:name="com.zcx.learnapp.activity.LubanActivity" />
+        <activity android:name="com.zcx.learnapp.activity.ImageActivity" />
+        <activity android:name="com.zcx.learnapp.activity.AndroidRActivity" />
+        <activity android:name="com.zcx.learnapp.activity.LevelViewActivity" />
     </application>
 
 </manifest>
