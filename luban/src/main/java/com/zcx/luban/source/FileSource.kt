@@ -27,7 +27,7 @@ class FileSource(private val file: File) : Source {
 
     override fun getExifInterface(): ExifInterface? {
         var exifInterface: ExifInterface? = null
-        val name = file.name.toLowerCase(Locale.getDefault())
+        val name = file.name.lowercase(Locale.getDefault())
         val isJpgFile = name.contains(".jpeg") || name.contains(".jpg")
         if (isJpgFile) {
             exifInterface = ExifInterface(file.absolutePath)

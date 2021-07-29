@@ -31,6 +31,8 @@
         <activity android:name="com.zcx.learnapp.activity.ImageActivity" />
         <activity android:name="com.zcx.learnapp.activity.AndroidRActivity" />
         <activity android:name="com.zcx.learnapp.activity.LevelViewActivity" />
+        <activity android:name=".activity.HomeTestActivity" />
+        <activity android:name=".activity.ListTestActivity" />
     </application>
 
 </manifest>

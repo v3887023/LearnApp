@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
-import com.bm.library.PhotoView
 import com.bumptech.glide.Glide
+import com.github.chrisbanes.photoview.PhotoView
 import com.zcx.learnapp.R
 import com.zcx.learnapp.adapter.ImageSourceAdapter
 import com.zcx.learnapp.adapter.SourceBo
@@ -36,7 +36,6 @@ class ImageActivity : BaseActivity() {
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
                 val view = layoutInflater.inflate(R.layout.item_image_source, null)
                 val photoView = view.findViewById<PhotoView>(R.id.photoView)
-                photoView.enable()
 
                 val item = sources[position]
 

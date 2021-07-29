@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/firstTv"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#EE2532"
+        android:gravity="center"
+        android:text="云集 99 / 明日预告"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/secondTv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#BDBDBD"
+        android:gravity="center"
+        android:text="TAB 区域"
+        android:textColor="@color/white" />
+</LinearLayout>

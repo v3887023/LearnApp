@@ -58,7 +58,7 @@ class UriSource(private val contentResolver: ContentResolver, private val uri: U
         val fileDescriptor = getFileDescriptor() ?: return null
 
         var exifInterface: ExifInterface? = null
-        val name = uriInfo.name.toLowerCase(Locale.getDefault())
+        val name = uriInfo.name.lowercase(Locale.getDefault())
         val isJpgFile = name.contains(".jpeg") || name.contains(".jpg")
         if (isJpgFile) {
             exifInterface = ExifInterface(fileDescriptor)

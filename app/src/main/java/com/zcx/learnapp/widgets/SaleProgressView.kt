@@ -417,7 +417,7 @@ class SaleProgressView @JvmOverloads constructor(
     }
 
     private val progressBarWidth: Int
-        private get() {
+        get() {
             val availableWidth =
                 measuredWidth - paddingLeft - paddingRight - mProgressPaddingLeft - mProgressPaddingRight
             return if (mNeedExtraSpace) availableWidth - mExtraSpace else availableWidth
