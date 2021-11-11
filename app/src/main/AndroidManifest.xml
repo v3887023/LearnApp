@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zcx.learnapp">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -33,6 +36,8 @@
         <activity android:name="com.zcx.learnapp.activity.LevelViewActivity" />
         <activity android:name=".activity.HomeTestActivity" />
         <activity android:name=".activity.ListTestActivity" />
+        <activity android:name=".activity.TableTestActivity" />
+        <activity android:name=".activity.PrintTestActivity" />
     </application>
 
 </manifest>

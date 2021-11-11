@@ -7,4 +7,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="ProgressView2" >
+        <attr name="pv_progressDrawable" format="reference|color" />
+        <attr name="pv_progressBackgroundDrawable" format="reference|color" />
+        <attr name="pv_progress" format="float" />
+        <attr name="pv_textPaddingHorizontal" format="dimension"/>
+        <attr name="pv_textColor" format="color" />
+    </declare-styleable>
 </resources>
