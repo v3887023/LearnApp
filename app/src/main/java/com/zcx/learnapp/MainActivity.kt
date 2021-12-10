@@ -3,7 +3,6 @@ package com.zcx.learnapp
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.zcx.SubjectProvider
 import com.zcx.learnapp.adapter.SubjectAdapter
 import com.zcx.learnapp.base.BaseActivity

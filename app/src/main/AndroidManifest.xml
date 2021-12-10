@@ -36,8 +36,7 @@
         <activity android:name="com.zcx.learnapp.activity.LevelViewActivity" />
         <activity android:name=".activity.HomeTestActivity" />
         <activity android:name=".activity.ListTestActivity" />
-        <activity android:name=".activity.TableTestActivity" />
-        <activity android:name=".activity.PrintTestActivity" />
+        <activity android:name=".activity.GuideActivity" />
     </application>
 
 </manifest>

@@ -116,9 +116,9 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    fun handleBackEvent() = false
+    open fun handleBackEvent() = false
 
-    fun fullscreen() = false
+    protected open fun fullscreen() = false
 
     protected fun setFullscreen(fullscreen: Boolean) {
         if (!isActivityInitialized()) {
@@ -136,15 +136,15 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    protected fun onFullscreenStateChange(fullscreen: Boolean) {
+    protected open fun onFullscreenStateChange(fullscreen: Boolean) {
 
     }
 
-    fun getStatusBarColor(): Int {
+    protected open fun getStatusBarColor(): Int {
         return DEFAULT_STATUS_BAR_COLOR
     }
 
-    fun getRequestedOrientation(): Int {
+    protected open fun getRequestedOrientation(): Int {
         return if (isActivityInitialized()) activity.requestedOrientation else ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
     }
 
