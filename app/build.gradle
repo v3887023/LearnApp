@@ -29,9 +29,35 @@ android {
         multiDexEnabled true
     }
 
+    signingConfigs {
+        debugConfig {
+            keyAlias KEYALIAS
+            keyPassword PASSWORD
+            storeFile file(STOREFILEPATH)
+            storePassword PASSWORD
+            v2SigningEnabled true
+
+        }
+        releaseConfig {
+            keyAlias KEYALIAS
+            keyPassword PASSWORD
+            storeFile file(STOREFILEPATH)
+            storePassword PASSWORD
+            v2SigningEnabled true
+        }
+    }
+
     buildTypes {
         release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.releaseConfig
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
             minifyEnabled false
+            signingConfig signingConfigs.debugConfig
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
