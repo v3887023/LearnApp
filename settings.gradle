@@ -1,5 +1,6 @@
+rootProject.name = "LearnApp"
 include ':luban'
 include ':lib_annotations'
 include ':lib_compiler'
 include ':app'
-rootProject.name = "LearnApp"
+include ':XLog'
