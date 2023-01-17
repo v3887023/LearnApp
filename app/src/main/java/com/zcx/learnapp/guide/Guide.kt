@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.*
 import android.view.Gravity
 import android.view.View
+import android.view.View.OnAttachStateChangeListener
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
@@ -181,8 +182,8 @@ class GuidePage private constructor() {
 
             val view = guideView.getView(highlightLayout.context, highlightLayout)
             if (view != null) {
-                view.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-                    override fun onViewAttachedToWindow(v: View?) {
+                view.addOnAttachStateChangeListener(object : OnAttachStateChangeListener {
+                    override fun onViewAttachedToWindow(view: View) {
                         val lp = view.layoutParams as ViewGroup.MarginLayoutParams
                         val location = guideView.getLocation(view, rectF)
                         lp.leftMargin = location[0]
@@ -191,7 +192,7 @@ class GuidePage private constructor() {
                         view.layoutParams = lp
                     }
 
-                    override fun onViewDetachedFromWindow(v: View?) {
+                    override fun onViewDetachedFromWindow(p0: View) {
 
                     }
                 })
