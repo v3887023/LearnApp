@@ -105,7 +105,7 @@ class LubanEngine : CompressEngine {
         // 无损不支持压缩
         if (compressFormat != Bitmap.CompressFormat.PNG && fileLength > 0) {
             //耗时由此处触发
-            while (stream.size() / 1024 > fileLength && quality > 6) {
+            while (stream.size() > fileLength && quality > 6) {
                 stream.reset()
                 quality -= 6
                 bitmap.compress(compressFormat, quality, stream)
