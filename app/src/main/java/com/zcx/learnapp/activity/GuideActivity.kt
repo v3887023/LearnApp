@@ -13,7 +13,6 @@ import com.zcx.lib_annotations.Subject
 @Subject("引导")
 class GuideActivity : BaseActivity() {
     private lateinit var homeTv: TextView
-    private lateinit var contentTv: TextView
 
     companion object {
         private const val TAG = "GuideActivity"
@@ -25,8 +24,6 @@ class GuideActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         homeTv = findViewById(R.id.homeTv)
-        contentTv = findViewById(R.id.contentTv)
-
 
         homeTv.post {
             Guide.Builder(this)
@@ -38,7 +35,7 @@ class GuideActivity : BaseActivity() {
                 )
                 .addPage(
                     GuidePage.Builder()
-                        .highlight(contentTv)
+                        .highlight(findViewById(R.id.contentTv))
                         .highlightOptions(HighlightOptions.ofOval().padding(10).trimToSquare())
                         .guideView(TestGuideView())
                         .build()
