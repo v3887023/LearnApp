@@ -1,9 +1,9 @@
 package com.zcx.lib_compiler
 
-import com.zcx.lib_annotations.Subject
-import com.zcx.lib_annotations.entity.SubjectEntity
 import com.google.auto.service.AutoService
 import com.squareup.javapoet.*
+import com.zcx.lib_annotations.Subject
+import com.zcx.lib_annotations.entity.SubjectEntity
 import javax.annotation.processing.*
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.Modifier
@@ -13,7 +13,7 @@ import javax.tools.Diagnostic
 @AutoService(Processor::class)
 class SubjectProcessor : AbstractProcessor() {
     var filer: Filer? = null
-    var messager:Messager?=null
+    var messager: Messager? = null
 
     override fun init(p0: ProcessingEnvironment?) {
         super.init(p0)
@@ -48,11 +48,11 @@ class SubjectProcessor : AbstractProcessor() {
                 val subject = element.getAnnotation(annotationType)
                 try {
                     codeBlockBuilder.addStatement(
-                            "subjectEntities.add(new \$T(\$S, \$S, \$S, ${subject.isTest}))",
-                            TypeName.get(entityType),
-                            element.toString(),
-                            subject.title,
-                            subject.description
+                        "subjectEntities.add(new \$T(\$S, \$S, \$S, ${subject.isTest}))",
+                        TypeName.get(entityType),
+                        element.toString(),
+                        subject.title,
+                        subject.description
                     )
                 } catch (e: Exception) {
                     messager?.printMessage(Diagnostic.Kind.ERROR, e.message, element)

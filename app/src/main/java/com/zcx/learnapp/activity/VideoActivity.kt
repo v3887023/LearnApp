@@ -8,16 +8,19 @@ import android.os.Bundle
 import android.os.CancellationSignal
 import android.provider.MediaStore
 import android.util.Size
+import android.widget.ImageView
 import com.zcx.learnapp.R
 import com.zcx.learnapp.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_video.*
 import kotlin.concurrent.thread
 
 class VideoActivity : BaseActivity() {
+    private lateinit var thumbIv: ImageView
     override fun getLayoutId() = R.layout.activity_video
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        thumbIv = findViewById(R.id.thumbIv)
 
         thread {
             getVideoThumbnail()

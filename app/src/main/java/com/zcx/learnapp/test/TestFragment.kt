@@ -4,7 +4,7 @@ import android.view.View
 import com.zcx.learnapp.R
 import com.zcx.learnapp.base.BaseFragment
 
-class TestFragment: BaseFragment() {
+class TestFragment : BaseFragment() {
     override fun getLayoutId() = R.layout.fragment_test
 
     override fun initViews(view: View) {

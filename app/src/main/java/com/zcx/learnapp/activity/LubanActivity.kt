@@ -11,21 +11,20 @@ import android.os.Looper
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import android.widget.SeekBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.imaginer.utils.SoEngine
 import com.zcx.learnapp.R
 import com.zcx.learnapp.adapter.ImageAdapter
 import com.zcx.learnapp.adapter.ImageBo
 import com.zcx.learnapp.base.BaseActivity
 import com.zcx.lib_annotations.Subject
-import com.imaginer.utils.SoEngine
 import com.zcx.luban.CompressListener
 import com.zcx.luban.Luban
 import com.zcx.luban.executor.Executors
 import com.zcx.luban.source.UriSource
-import kotlinx.android.synthetic.main.activity_luban.*
 import kotlin.concurrent.thread
 
 /**
@@ -36,6 +35,19 @@ import kotlin.concurrent.thread
  */
 @Subject("图片压缩")
 class LubanActivity : BaseActivity() {
+    private lateinit var seekBar: SeekBar
+    private lateinit var countTv: TextView
+    private lateinit var sizeRv: RecyclerView
+    private lateinit var showResolutionCb: CheckBox
+    private lateinit var lubanBtn: Button
+    private lateinit var soBtn: Button
+    private lateinit var lubanCostTv: TextView
+    private lateinit var soCostTv: TextView
+    private lateinit var multipleThreadCb: CheckBox
+    private lateinit var recursiveCb: CheckBox
+    private lateinit var stateTv: TextView
+    private lateinit var controlLl: LinearLayout
+
     private var lastCount = 0
     private var lastUriInfoList = mutableListOf<UriInfo>()
     private val list = mutableListOf<ImageBo>()
@@ -48,6 +60,19 @@ class LubanActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        seekBar = findViewById(R.id.seekBar)
+        countTv = findViewById(R.id.countTv)
+        sizeRv = findViewById(R.id.sizeRv)
+        showResolutionCb = findViewById(R.id.showResolutionCb)
+        lubanBtn = findViewById(R.id.lubanBtn)
+        soBtn = findViewById(R.id.soBtn)
+        lubanCostTv = findViewById(R.id.lubanCostTv)
+        soCostTv = findViewById(R.id.soCostTv)
+        multipleThreadCb = findViewById(R.id.multipleThreadCb)
+        recursiveCb = findViewById(R.id.recursiveCb)
+        stateTv = findViewById(R.id.stateTv)
+        controlLl = findViewById(R.id.controlLl)
 
         setStateTv(STATE_INITIAL, "准备就绪")
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {

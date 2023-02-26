@@ -47,7 +47,15 @@ class BluetoothHelper(val context: Context) {
             registerReceiver()
         }
 
-        ActivityCompat.requestPermissions((context as Activity), arrayOf(Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN, Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        ActivityCompat.requestPermissions(
+            (context as Activity),
+            arrayOf(
+                Manifest.permission.BLUETOOTH,
+                Manifest.permission.BLUETOOTH_ADMIN,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ),
+            1
+        )
         bluetoothAdapter.startDiscovery()
     }
 

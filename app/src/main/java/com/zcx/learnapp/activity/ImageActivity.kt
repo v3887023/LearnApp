@@ -5,13 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.github.chrisbanes.photoview.PhotoView
 import com.zcx.learnapp.R
 import com.zcx.learnapp.adapter.ImageSourceAdapter
 import com.zcx.learnapp.adapter.SourceBo
 import com.zcx.learnapp.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_image.*
 
 /**
  * @Description:
@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_image.*
  * @CreateDate: 2021/2/5
  */
 class ImageActivity : BaseActivity() {
+    private lateinit var viewPager: ViewPager
     private val sources = mutableListOf<SourceBo>()
     private val imageSourceAdapter = ImageSourceAdapter(sources)
 
@@ -27,6 +28,8 @@ class ImageActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewPager = findViewById(R.id.viewPager)
 
         viewPager.adapter = object : PagerAdapter() {
             override fun getCount(): Int {

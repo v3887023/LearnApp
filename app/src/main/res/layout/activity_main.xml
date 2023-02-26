@@ -13,13 +13,13 @@
         android:layout_height="wrap_content"
         app:title="@string/app_name" />
 
-<!--    <com.zcx.learnapp.widgets.TouchableView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:background="@color/colorPrimary"-->
-<!--        android:layout_height="300dp" />-->
+    <!--    <com.zcx.learnapp.widgets.TouchableView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:background="@color/colorPrimary"-->
+    <!--        android:layout_height="300dp" />-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_subject"
+        android:id="@+id/subjectRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

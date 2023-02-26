@@ -18,10 +18,10 @@ import com.zcx.learnapp.adapter.ViewHolder
 import com.zcx.learnapp.base.BaseActivity
 import com.zcx.learnapp.utils.dp
 import com.zcx.lib_annotations.Subject
-import kotlinx.android.synthetic.main.activity_home_test.*
 
 @Subject("首页测试")
 class HomeTestActivity : BaseActivity() {
+    private lateinit var itemRv: RecyclerView
     private var lastStick = false
 
     override fun getLayoutId() = R.layout.activity_home_test
@@ -29,6 +29,8 @@ class HomeTestActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        itemRv = findViewById(R.id.itemRv)
 
         val layoutManager = VirtualLayoutManager(this)
         val delegateAdapter = DelegateAdapter(layoutManager)

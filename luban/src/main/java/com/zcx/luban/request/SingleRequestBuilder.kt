@@ -1,9 +1,9 @@
 package com.zcx.luban.request
 
-import com.zcx.luban.worker.SingleCompressWorker
 import com.zcx.luban.CompressCallback
 import com.zcx.luban.result.SingleCompressResult
 import com.zcx.luban.source.Source
+import com.zcx.luban.worker.SingleCompressWorker
 
 /**
  * 构建单个压缩请求的类

@@ -10,12 +10,13 @@ import android.os.*
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.net.toFile
 import com.zcx.learnapp.R
 import com.zcx.learnapp.base.BaseActivity
 import com.zcx.lib_annotations.Subject
-import kotlinx.android.synthetic.main.activity_android_q.*
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -24,6 +25,8 @@ import kotlin.concurrent.thread
 
 @Subject(title = "Android 10")
 class AndroidQActivity : BaseActivity() {
+    private lateinit var imageIv: ImageView
+    private lateinit var progressTv: TextView
     override fun getLayoutId() = R.layout.activity_android_q
 
     fun startActivity(view: View) {
@@ -35,6 +38,9 @@ class AndroidQActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        imageIv = findViewById(R.id.imageIv)
+        progressTv = findViewById(R.id.progressTv)
 
         val externalFilesDir = getExternalFilesDir("")
         val externalStorageDirectory = Environment.getExternalStorageDirectory()
